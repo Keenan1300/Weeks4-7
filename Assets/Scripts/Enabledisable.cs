@@ -26,12 +26,14 @@ public class Enabledisable : MonoBehaviour
             go.SetActive(true);
         }
 
+       
         if(Input.GetKey(KeyCode.Space))
         {
             if(audioSource.isPlaying == false)
             {
                 //audioSource.Play();
                 audioSource.PlayOneShot(clip);
+
             }
            
         }
