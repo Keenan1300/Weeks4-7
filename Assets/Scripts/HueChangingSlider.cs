@@ -1,26 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class HueChangingSlider : MonoBehaviour
 {
     private SpriteRenderer SpriteRenderer;
-    public Color slidingcolor;
+    Color slidingcolor;
 
     void Start()
     {
-     slidingcolor = new Color(0, 100, 100);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
-        SpriteRenderer.color = slidingcolor;
+   {
     }
 
-   public void changecolor(float change)
+    //Function changes color thats applied to character sprite
+   public void changecolor(float sliderValue)
     {
-        slidingcolor = new Color(change * 2, 100, 100);
+        
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        slidingcolor = new Color(sliderValue, 40, 40);
+        SpriteRenderer.color = slidingcolor;
     }
 }
