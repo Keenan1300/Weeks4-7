@@ -20,6 +20,11 @@ public class Movment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //set speed
+        Speed = 0.1f;
+
+
         //set vector3 variables for scale and positioning
         Vector3 scl = transform.localScale;
         Vector3 pos = transform.position;
@@ -41,15 +46,14 @@ public class Movment : MonoBehaviour
             
         }
 
-        //set speed
-        Speed = 0.1f;
+      
 
         //Move to the left
         if (Input.GetKey(KeyCode.A))
         {
             anim.SetFloat("Speed", 1);
             pos.x -= Speed;
-            Debug.Log("a works");
+            Debug.Log("A works");
             Speed = Speed * Time.deltaTime;
 
             // player flips sides if they are facing the opposite direction
@@ -58,7 +62,6 @@ public class Movment : MonoBehaviour
                 scl.x = scl.x * -1;
             }
         }
-
 
 
         //Move to the right
@@ -74,18 +77,15 @@ public class Movment : MonoBehaviour
             {
                 scl.x = scl.x * -1;
             }
-            pos.x += Speed;
-            Debug.Log("d works");
         }
-
-
         //if no movment is detected, stop speed
-        else
-
-         {
-            Speed = 0f;
+         Speed = 0f;
+       
+        //Stop Runcycle if player is not moving
+        if (Speed !< 0.1f)
+        {
             anim.SetFloat("Speed", 0);
-         }
+        }
 
         //Apply the position and scale data to the gameobject itself so that changes can be seen
         transform.position = pos;
