@@ -41,58 +41,51 @@ public class Movment : MonoBehaviour
             
         }
 
+        //set speed
+        Speed = 0.1f;
 
-        //Movement mechanics for moving to the left
-        
+        //Move to the left
         if (Input.GetKey(KeyCode.A))
         {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                anim.SetFloat("Speed", 1);
-            }
+            anim.SetFloat("Speed", 1);
+            pos.x -= Speed;
+            Debug.Log("a works");
+            Speed = Speed * Time.deltaTime;
 
             // player flips sides if they are facing the opposite direction
             if (scl.x != -1)
             {
                 scl.x = scl.x * -1;
             }
-            Speed += 0.02f;
-            
-            if (Input.GetKeyDown(KeyCode.D))
+        }
+
+
+
+        //Move to the right
+        if (Input.GetKey(KeyCode.D))
         {
             anim.SetFloat("Speed", 1);
-        }
-            pos.x -= Speed;
-            Debug.Log("a works");
-        }
-        //if no movment is detected, stop speed
-        else
-        {
-            Speed = 0f;
-            anim.SetFloat("Speed", 0);
-        }
+            pos.x += Speed;
+            Debug.Log("D works");
+            Speed = Speed * Time.deltaTime;
 
-        //Movement mechanics for moving to the right
-    
-
-        if (Input.GetKey("d"))
-        {
-
-        // player flips sides if they are facing the opposite direction  
+            // player flips sides if they are facing the opposite direction  
             if (scl.x != 1)
             {
                 scl.x = scl.x * -1;
             }
-            Speed += 0.02f;
             pos.x += Speed;
             Debug.Log("d works");
         }
 
+
         //if no movment is detected, stop speed
         else
-        {
+
+         {
             Speed = 0f;
-        }
+            anim.SetFloat("Speed", 0);
+         }
 
         //Apply the position and scale data to the gameobject itself so that changes can be seen
         transform.position = pos;
