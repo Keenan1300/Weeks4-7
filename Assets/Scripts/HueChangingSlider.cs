@@ -6,14 +6,8 @@ using UnityEngine.UI;
 
 public class HueChangingSlider : MonoBehaviour
 {
-    private SpriteRenderer SpriteRenderer;
-    Color slidingcolor;
-    float Hue;
     Renderer ColorRenderer;
-    public Slider Slider;
-    float Sat;
-    float Val;
-
+ 
     void Start()
     {
         ColorRenderer = GetComponent<Renderer>();
@@ -23,7 +17,6 @@ public class HueChangingSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
    {
-        Hue = Slider.value;
     }
 
     //Function changes color thats applied to character sprite
