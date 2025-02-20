@@ -34,7 +34,7 @@ public class Movment : MonoBehaviour
         //Movement mechanics for moving to the left
         if (Input.GetKey("a"))
         {
-            anim.Play("Run", 0, 1);
+            
             // player flips sides if they are facing the opposite direction
             isPlaying = true;
             if (scl.x != -1)
@@ -44,6 +44,11 @@ public class Movment : MonoBehaviour
             Speed += 0.02f;
             pos.x -= Speed;
             Debug.Log("a works");
+
+            if (Input.GetKeyDown("a"))
+            {
+                anim.Play("Run", 0, 1);
+            }
         }
         //if no movment is detected, stop speed
         else
@@ -54,9 +59,6 @@ public class Movment : MonoBehaviour
         //Movement mechanics for moving to the right
         if (Input.GetKey("d"))
         {
-            
-            anim.Play("Run", 0, 1);
-
             // player flips sides if they are facing the opposite direction
             isPlaying = true;
             if (scl.x != 1)
@@ -67,6 +69,10 @@ public class Movment : MonoBehaviour
             pos.x += Speed;
             Debug.Log("d works");
 
+            if (Input.GetKeyDown("d"))
+            {
+                anim.Play("Run", 0, 1);
+            }
         }
 
         //if no movment is detected, stop speed
