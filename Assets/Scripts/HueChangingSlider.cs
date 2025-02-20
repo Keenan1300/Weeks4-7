@@ -17,6 +17,7 @@ public class HueChangingSlider : MonoBehaviour
     void Start()
     {
         ColorRenderer = GetComponent<Renderer>();
+        ColorRenderer.material.color = Color.HSVToRGB(0, 1, 1);
     }
 
     // Update is called once per frame
