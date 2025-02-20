@@ -25,9 +25,19 @@ public class Movment : MonoBehaviour
         Vector3 squareinscreen = Camera.main.WorldToScreenPoint(pos);
 
         //Ensure player remains on screen at all times.
-        if (squareinscreen.x < 0 || squareinscreen.x > Screen.width)
+        if (squareinscreen.x < 0 )
         {
-            Speed = 0f;
+            Vector3 boundary = new Vector3(60, 0, 0);
+           pos.x = Camera.main.ScreenToWorldPoint(boundary).x;
+           
+        }   
+
+        if (squareinscreen.x > Screen.width)
+        {
+            Vector3 boundary = new Vector3(Screen.width - 60, 0, 0);
+            pos.x = Camera.main.ScreenToWorldPoint(boundary).x;
+            
+            
         }
 
 
