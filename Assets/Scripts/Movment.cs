@@ -9,6 +9,7 @@ public class Movment : MonoBehaviour
     float Speed;
     Boolean isPlaying;
     public Animator anim;
+    SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
