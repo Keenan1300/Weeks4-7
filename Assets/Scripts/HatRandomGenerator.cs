@@ -9,106 +9,75 @@ public class HatRandomGenerator : MonoBehaviour
     //Introduce Chance integer
     float ChanceHat;
 
-    public GameObject beanie;
-    public GameObject wrap;
-    public GameObject oldhat;
-    public GameObject cap;
-
-    public Transform SpawnLocation;
-
-    bool Hatison;
-    bool Wrapison;
-    bool beanieison;
-    bool capison;
 
     // Start is called before the first frame update
     void Start()
     {
-        Hatison = false;
-        Wrapison = false;
-        beanieison = false;
-        capison = false;
-
-        beanie = Resources.Load("beanie") as GameObject;
+        GameObject.Find("Headwrap").transform.localScale = new Vector3(0, 0, 0);
+        GameObject.Find("Detecthat").transform.localScale = new Vector3(0, 0, 0);
+        GameObject.Find("beanie").transform.localScale = new Vector3(0, 0, 0);
+        GameObject.Find("Cap").transform.localScale = new Vector3(0, 0, 0);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Find and collect game hat objects so systems recognizes them
+    //Find and collect game hat objects so systems recognizes them
         GameObject hat = GameObject.Find("Detecthat");
         GameObject beanie = GameObject.Find("beanie");
         GameObject cap = GameObject.Find("Cap");
         GameObject wrap = GameObject.Find("Headwrap");
-
-        hat = Resources.Load("Detecthat") as GameObject;
-        beanie = Resources.Load("beanie") as GameObject;
-        cap = Resources.Load("Cap") as GameObject;
-        wrap = Resources.Load("Headwrap") as GameObject;
-
-        if (Hatison == true)
-        {
-            Instantiate(oldhat, SpawnLocation.position, Quaternion.identity);
-        }
-      
-
-        if (Wrapison == true)
-        {
-            Instantiate(wrap, SpawnLocation.position, Quaternion.identity);
-        }
-      
-
-        if (beanieison == true)
-        {
-            Instantiate(beanie, SpawnLocation.position, Quaternion.identity);
-        }
-       
-
-        if (capison == true)
-        {
-            Instantiate(cap, SpawnLocation.position, Quaternion.identity);
-        }
-       
-
 
     }
 
 
     public void Generate()
     {
+        
+        //Roll for a random number from 1 to 4. Each of these numbers represent a hat that will randomly be assigned to the player avatar
         int ChanceHat = Random.Range(1, 4);
         Debug.Log(ChanceHat);
 
+
+        // Depending on the value of chancehat, the random variable, all but one type of hat will be shrunken incredibly small, with one being regularly sized.
+       
+        
+        //Activate the headwrap hat
         if (ChanceHat == 4)
         {
-            Wrapison = true;
-            capison = false;
-            Hatison = false;
-            beanieison = false;
+            GameObject.Find("Headwrap").transform.localScale = new Vector3(1, 1, 1);
+            GameObject.Find("Detecthat").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("beanie").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("Cap").transform.localScale = new Vector3(0, 0, 0);
         }
 
+        //Activate the cap
         if (ChanceHat == 3)
         {
-            capison = true;
-            Wrapison = false;
-            Hatison = false;
-            beanieison = false;
+            GameObject.Find("Cap").transform.localScale = new Vector3(1, 1, 1);
+            GameObject.Find("beanie").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("Detecthat").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("Headwrap").transform.localScale = new Vector3(0, 0, 0);
 
         }
+
+        //Activate the beanie 
         if (ChanceHat == 2)
         {
-            beanieison = true;
-            capison = false;
-            Wrapison = false;
-            Hatison = false;
+            GameObject.Find("beanie").transform.localScale = new Vector3(1, 1, 1);
+            GameObject.Find("Cap").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("Detecthat").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("Headwrap").transform.localScale = new Vector3(0, 0, 0);
         }
+
+        //Activate the detective hat
         if (ChanceHat == 1)
         {
-            Hatison = true;
-            capison = false;
-            Wrapison = false;
-            beanieison = false;
+            GameObject.Find("Detecthat").transform.localScale = new Vector3(1, 1, 1);
+            GameObject.Find("beanie").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("Cap").transform.localScale = new Vector3(0, 0, 0);
+            GameObject.Find("Headwrap").transform.localScale = new Vector3(0, 0, 0);
         }
     }
 

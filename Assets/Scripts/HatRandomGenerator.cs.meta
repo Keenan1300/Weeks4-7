@@ -3,7 +3,12 @@ guid: f18b2aaa73448294e8a28117d5086de6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - beanie: {fileID: 1964176842716111636, guid: 31f40d4392e29664385c30dbb366ae3c, type: 3}
+  - wrap: {fileID: 3772925649283928785, guid: 3dd3a810eaa3c7440a5454a6044a92e7, type: 3}
+  - oldhat: {fileID: 8984579700322630089, guid: 1679949d4c2b8474f995b3584146a605, type: 3}
+  - cap: {fileID: 838163138709745966, guid: 1f5b164c3407b6341b353adea586bd87, type: 3}
+  - SpawnLocation: {fileID: 4989680925596251173, guid: 1f5b164c3407b6341b353adea586bd87, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
