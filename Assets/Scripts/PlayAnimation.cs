@@ -18,6 +18,11 @@ public class PlayAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Isplaying == true)
+        {
+            anim.Play("Run", 5);
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             Isplaying = true;
