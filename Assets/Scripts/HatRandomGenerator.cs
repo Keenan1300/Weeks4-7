@@ -36,7 +36,7 @@ public class HatRandomGenerator : MonoBehaviour
     {
         
         //Roll for a random number from 1 to 4. Each of these numbers represent a hat that will randomly be assigned to the player avatar
-        int ChanceHat = Random.Range(1, 4);
+        int ChanceHat = Random.Range(1, 5);
         Debug.Log(ChanceHat);
 
 
