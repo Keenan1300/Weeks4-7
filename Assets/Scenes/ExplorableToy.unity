@@ -463,7 +463,6 @@ GameObject:
   - component: {fileID: 180890203}
   - component: {fileID: 180890202}
   - component: {fileID: 180890204}
-  - component: {fileID: 180890205}
   - component: {fileID: 180890206}
   - component: {fileID: 180890207}
   m_Layer: 0
@@ -565,19 +564,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &180890205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180890201}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfd6b773b58fdc24d98400d38b5e3ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 180890204}
 --- !u!114 &180890206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,8 +667,8 @@ Transform:
   m_GameObject: {fileID: 203086408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -3.0403, z: 0}
-  m_LocalScale: {x: 8.447435, y: 2.1375525, z: 1.699821}
+  m_LocalPosition: {x: 0.01, y: -2.8232, z: 0}
+  m_LocalScale: {x: 7.1034484, y: 1.797468, z: 1.4293795}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 866831454}
@@ -1139,7 +1125,7 @@ GameObject:
   - component: {fileID: 866831454}
   - component: {fileID: 866831453}
   m_Layer: 0
-  m_Name: r
+  m_Name: BlackBackdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1362,7 +1348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd6b773b58fdc24d98400d38b5e3ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 180890204}
 --- !u!4 &1206395887
 Transform:
   m_ObjectHideFlags: 0

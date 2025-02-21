@@ -67,7 +67,7 @@ public class Movment : MonoBehaviour
         //Move to the right
         if (Input.GetKey(KeyCode.D))
         {
-            anim.SetFloat("Speed", 1);
+           
             pos.x += Speed;
             Debug.Log("D works");
             Speed = Speed * Time.deltaTime;
@@ -80,13 +80,8 @@ public class Movment : MonoBehaviour
         }
         //if no movment is detected, stop speed
          Speed = 0f;
-       
-        //Stop Runcycle if player is not moving
-        if (Speed !< 0.1f)
-        {
-            anim.SetFloat("Speed", 0);
-        }
-
+      
+   
         //Apply the position and scale data to the gameobject itself so that changes can be seen
         transform.position = pos;
         transform.localScale = scl;

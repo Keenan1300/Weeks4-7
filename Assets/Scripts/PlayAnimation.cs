@@ -18,23 +18,24 @@ public class PlayAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             Isplaying = true;
-            anim.SetFloat("Speed", 1);
+            anim.SetBool("isPlaying", true);
         }
         
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             Isplaying = true;
-            anim.SetFloat("Speed", 1);
+            anim.SetBool("isPlaying", true);
         
         }
         if (Isplaying == false) 
         {
-            anim.SetFloat("Speed", 0);
+            anim.SetBool("isPlaying", false);
         }
-        
+
+        //Stop Runcycle if player is not moving
         Isplaying = false;
     }
 }
