@@ -1610,6 +1610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 904130163}
+  - component: {fileID: 904130164}
   m_Layer: 0
   m_Name: DiscoModeSpawner
   m_TagString: Untagged
@@ -1634,6 +1635,22 @@ Transform:
   - {fileID: 604097015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904130164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904130162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4219e5f52a9f54ab70fa99a027c444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 2330227554666885836, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+  prefab: {fileID: 3485101868317624316, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+  SpawnLocation: {fileID: 904130163}
+  Player: {fileID: 180890201}
 --- !u!1 &1017968193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1748,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2103105717}
         m_TargetAssemblyTypeName: DiscoLightsturning, Assembly-CSharp
+        m_MethodName: discomodeOFF
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 904130164}
+        m_TargetAssemblyTypeName: ConfettiGenerator, Assembly-CSharp
         m_MethodName: discomodeOFF
         m_Mode: 1
         m_Arguments:
@@ -1876,6 +1905,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2103105717}
         m_TargetAssemblyTypeName: DiscoLightsturning, Assembly-CSharp
+        m_MethodName: discomode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 904130164}
+        m_TargetAssemblyTypeName: ConfettiGenerator, Assembly-CSharp
         m_MethodName: discomode
         m_Mode: 1
         m_Arguments:
@@ -2132,7 +2173,7 @@ Transform:
   m_GameObject: {fileID: 1652379671}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -0.12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2232,7 +2273,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1680701102
 Canvas:
   m_ObjectHideFlags: 0
@@ -2242,8 +2283,8 @@ Canvas:
   m_GameObject: {fileID: 1680701099}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 2
+  m_Camera: {fileID: 1652379673}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2265,8 +2306,8 @@ RectTransform:
   m_GameObject: {fileID: 1680701099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.0165, y: 0.0165, z: 0.0165}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 67537474}
   - {fileID: 1066097709}
@@ -2277,8 +2318,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1101, y: 590}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1775363795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,6 +2676,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &342991061083968751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569589421730596672, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485101868317624316, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
+      propertyPath: m_Name
+      value: Confetti
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6752c05d1b7462541be804b58091ae94, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2645,3 +2743,4 @@ SceneRoots:
   - {fileID: 203086410}
   - {fileID: 1206395887}
   - {fileID: 904130163}
+  - {fileID: 342991061083968751}

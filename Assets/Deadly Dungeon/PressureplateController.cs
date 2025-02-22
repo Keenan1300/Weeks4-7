@@ -19,7 +19,7 @@ public class PressureplateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+   
         if (Isworking == true)
         {
             Debug.Log("Its working");
@@ -44,7 +44,7 @@ public class PressureplateController : MonoBehaviour
 
         else
             {
-                Isworking = false;
+            Isworking = false;
             IsActivated = false;
         }
 
@@ -52,6 +52,7 @@ public class PressureplateController : MonoBehaviour
         if(IsActivated == true) 
         {
             Instantiate(prefab, SpawnLocation.position, Quaternion.identity);
+           
    
         }
 
